@@ -1,0 +1,14 @@
+{% if switches %}
+    <ul>
+        {% for switch in switches %}
+            <label class="switch">
+                <input type="checkbox" class="switch-input">
+                <span class="switch-label" data-on="On" data-off="Off"></span>
+                <span class="switch-handle"></span>
+            </label>
+            <a href="{% url 'rpimanager:switch_details' switch.id %}">{{ switch.description }}</a>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No switches available</p>
+{% endif %}
